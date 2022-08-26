@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(170, 235, 235);
+        }
+        .gameBorder {
+            width:70%;
+            float: left;
+            border: 2px solid rgb(164, 245, 24);
+            width: 500px;
+            height: 600px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .player{
+            height: 70px;width: 10px;
+            animation: move 4s infinite linear;
+            animation-play-state: paused;
+        }
+        .gameBorder:active .player{
+            animation-play-state: running;
+        }
+        [class *="box"] {
+            margin-top: 10px;
+            position: relative;
+            height:70px; width: 70px;
+        }
+
+        .box1 {
+            animation-name: move1;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-timing-function: ease-out;
+        }
+
+        .box2 {
+            animation-name: move2;
+            animation-iteration-count: infinite;
+            animation-duration: 2.5s;
+            animation-timing-function: ease-in;
+        }
+
+        .box3 {
+            animation-name: move3;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+        }
+
+        .box4 {
+            animation-name: move4;
+            animation-iteration-count: infinite;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+        }
+        @keyframes move {
+            50%{
+                transform: translateX(-450px) ;
+            }
+        }
+        @keyframes move1 {
+            0% {   top:0px;}
+            50%  { top:490px;}
+            100% { top:0px;}
+        }
+        @keyframes move2 {
+            0% {   top:0px;}
+            50%  { top:490px;}
+            100% { top:0px;}
+        }
+        @keyframes move3 {
+            0% {   top:0px;}
+            50%  { top:490px;}
+            100% { top:0px;}
+        }
+        @keyframes move4 {
+            0% {   top:0px;}
+            50%  { top:490px;}
+            100% { top:0px;}
+        }
+        .gameDescription{
+            width:30%;
+            float:left;
+            border:1px solid;
+            margin-left: 50px;
+            margin-top: 300px;
+            /* margin-right: 0px; */
+        }
+        @media screen and (max-width:823px){
+            .gameDescription{
+                width:100%;
+                margin:0;
+                margin-top:10px;
+            }
+        }
+        @media screen and (max-width:500px) {
+            .gameBorder{
+                max-width:100%;
+            }
+          .player{
+            width:5px;
+          }
+          @keyframes move {
+            50%{
+                transform: translateX(-400px) ;
+            }
+        }
+          [class*="box"]{
+            height:50px;
+            max-width:50px;
+          }
+        }
+      @media screen and (max-width:330px){
+            @keyframes move {
+            50%{
+                transform: translateX(-270px) ;
+            }
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class = "container">
+    <div class="gameBorder">
+        <div class="box1" style=" background-color: pink;"></div>
+        <div class="box2" style=" background-color: pink;"></div>
+        <div class="box3" style=" background-color: pink;"></div>
+        <div class="box4" style=" background-color: pink;"></div>
+        <div class="player" style="background-color: red;"></div>
+    </div>
+    <div class = "gameDescription">
+        <p>Try moving the red stick across the width without making it collide with the boxes</p>
+    </div>
+    </div>
+</body>
+
+</html>
